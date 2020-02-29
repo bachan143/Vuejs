@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<style type="text/css">
+	
+
+	</style>
+</head>
+<body>
+   <div id="my-app1">
+  
+   FName:<input type="text" placeholder="Enter First Name" v-model="fname"></input><br/>
+   LName:<input type="text" placeholder="Enter Last Name" v-model="lname"></input><br/>
+
+   FullName:<input type="text" v-model:value="fullname"></input><br/>
+
+
+     ChannelName:{{channelName}}
+
+        
+     
+   	
+   </div>
+   
+   <script type="text/javascript">
+   
+   var myapp1=new Vue(
+      {
+        el:'#my-app1',
+        data:
+        {
+          fname:"",
+          lname:"",
+          channelName:"OWT"
+          
+
+          
+
+        },
+        methods:
+        {
+          
+
+            
+        },
+        computed:
+        {
+            fullname:
+            {
+              get:function()  //getter Function of FullName
+              {
+                 return this.fname+" "+this.lname;
+              },
+              set:function()//Setter Function of Fullname
+              {
+                this.channelName="Updated Owt"
+
+              }
+            }
+        }
+
+
+              
+              
+      });
+   
+   	  
+      
+   </script>
+        
+</body>
+</html>
