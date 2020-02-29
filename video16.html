@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<style type="text/css">
+	
+
+	</style>
+</head>
+<body>
+   <div id="my-app1">
+   <owt></owt>
+   
+
+        
+     
+   	
+   </div>
+   <div id="my-app2">
+   <owt></owt>
+        
+     
+    
+   </div>
+   <script type="text/javascript">
+   var data=
+   {
+     name:"Bachan Ghatuary",
+     author:"Cricket"
+
+   };
+    Vue.component("owt",
+    {
+      
+       data:function()
+       {
+         return data;
+       },
+      methods:
+      {
+        method1:function()
+        {
+          return "This is Vue Component";
+
+        },
+        Fireme:function()
+        {
+          this.name="pop"
+        }
+
+      },
+      computed:
+      {
+           computed1:function()
+           {
+            return "This is Computed function";
+
+           }
+      },
+      template:"<div><p>This is a Paragraph of Component Class Name:{{name}} Author: {{author}} methods:{{method1()}} Computed Function: {{computed1}}</p><p>The Second Paragraph<button @click='Fireme'>Click me</button></p></div>"
+
+    });
+   var myapp1=new Vue(
+      {
+        el:'#my-app1',
+        data:
+        {
+          
+
+          
+
+        },
+        methods:
+        {
+          
+
+            
+        }
+
+
+              
+              
+      });
+   var myapp2=new Vue(
+      {
+        el:'#my-app2',
+        data:
+        {
+         
+          
+
+        },
+        methods:
+        {
+          
+        }
+          
+
+              
+              
+      });
+   	  
+      
+   </script>
+        
+</body>
+</html>
