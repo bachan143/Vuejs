@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<style type="text/css">
+	
+
+	</style>
+</head>
+<body>
+   <div id="my-app1">
+     Name:<input type="text" placeholder="Name" ref="txtname"></input><br/>
+     Email:<input type="email" placeholder="email" ref="txtemail"></input>
+     <br/>
+     <p ref="para">This is Simple message</p>
+     <button type="button" @click="btnSubmit" >Submit</button>
+  
+   
+
+        
+     
+   	
+   </div>
+   
+   <script type="text/javascript">
+   
+   var myapp1=new Vue(
+      {
+        el:'#my-app1',
+        data:
+        {
+          
+          
+
+          
+
+        },
+        methods:
+        {
+            btnSubmit:function()
+            {
+              //console.log("Iam press")
+              console.log(this.$refs);
+              console.log(this.$refs.txtname.value);
+               console.log(this.$refs.txtemail.value);
+               console.log(this.$refs.para.innerHTML)
+
+            }
+          
+
+            
+        },
+        computed:
+        {
+            
+        }
+
+
+              
+              
+      });
+   
+   	  
+      
+   </script>
+        
+</body>
+</html>
