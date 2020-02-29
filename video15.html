@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<style type="text/css">
+	
+
+	</style>
+</head>
+<body>
+   <div id="my-app1">
+   <p>Title:{{title}}</p><br/>
+   <p>Author:{{author}}</p>
+   <p>{{secondApp()}}</p>
+   <p>{{accessComputedApp2()}}</p>
+
+        
+     
+   	
+   </div>
+   <div id="my-app2">
+        
+     <p>Author:{{author}}</p>
+     <p>{{secondApp()}}</p>
+    
+   </div>
+   <script type="text/javascript">
+   var myapp2=new Vue(
+      {
+        el:'#my-app2',
+        data:
+        {
+          author:"Cricket Match"
+          
+
+        },
+        methods:
+        {
+          secondApp:function()
+          {
+            return "This is second instance"
+            
+             }
+          },
+          computed:
+          {
+            fullname:function()
+            {
+              return this.author;
+            }
+
+          }
+
+              
+              
+      });
+   	  var myapp1=new Vue(
+   	  {
+   	  	el:'#my-app1',
+   	  	data:
+   	  	{
+          title:"Bachan Ghatuary",
+          author:myapp2.author,
+
+   	  		
+
+   	  	},
+   	  	methods:
+   	  	{
+          secondApp:function()
+          {
+            return myapp2.secondApp();
+            
+             },
+            accessComputedApp2:function()
+            {
+                return myapp2.fullname;
+            }
+
+   	  		  
+   	  	}
+
+
+              
+              
+   	  });
+      
+   </script>
+        
+</body>
+</html>
