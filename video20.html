@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<style type="text/css">
+	
+
+	</style>
+</head>
+<body>
+   <div id="my-app1">
+     
+  <button type="button" name="button" v-owt:blue="channelName">Area #1</button>
+  <button type="button" name="button" v-owt:red="channelName">Area #2</button>
+
+        
+     
+   	
+   </div>
+   
+   <script type="text/javascript">
+   Vue.directive("owt",function(el,binding)
+   {
+    // console.log(el);
+    // console.log(binding);
+    var dir_arg=binding.arg;
+    if(dir_arg=="red")
+    {
+      el.style.backgroundColor="red";
+      el.style.color="white";
+      el.style.fontSize="20px";
+
+    }
+    if(dir_arg=="blue")
+    {
+       var mod=binding.modifiers.change;
+       if(mod==true)
+       {
+        el.style.backgroundColor="orange";
+      el.style.color="white";
+      el.style.fontSize="20px";
+
+       }
+       else
+       {
+          el.style.backgroundColor="blue";
+      el.style.color="white";
+      el.style.fontSize="20px";
+       }
+      
+
+    }
+
+   });
+  
+   
+   
+   var myapp1=new Vue(
+      {
+        el:'#my-app1',
+        data:
+        {
+             channelName:"Bachan Ghatuary"
+          
+          
+          
+
+          
+
+        },
+        methods:
+        {
+
+            
+        },
+        computed:
+        {
+            
+        }
+
+
+              
+              
+      });
+   
+   	  
+      
+   </script>
+        
+</body>
+</html>
