@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<style type="text/css">
+	button.redClass
+	{
+		  background-color: red;
+		  border: 1px solid red;
+		  color: white;
+	}
+	button
+	{
+		background-color:blue;
+		  border: 1px solid blue;
+		  color: white;
+
+	}
+
+	</style>
+</head>
+<body>
+   <div id="my-app">
+     <p v-if="isActive">This is my if statement</p>
+     <p v-else>This is my else Statement</p>
+     <br/>
+     <p v-show="isActive">This is Sow Statement</p>
+     <button type="button" @click="incrementCountValue">Increment By 1</button>
+     <h4>{{count}}</h4>
+
+     <p v-if="count==1">This is value=1</p>
+     <p v-else-if="count==2">This is value=2</p>
+     <p v-else-if="count==3">This is value=3</p>
+     <p v-else>No value Matched</p>
+   	
+   </div>
+   <script type="text/javascript">
+   	  var myapp=new Vue(
+   	  {
+   	  	el:'#my-app',
+   	  	data:
+   	  	{
+   	  		isActive:true,
+   	  		count:0
+
+   	  	},
+   	  	methods:
+   	  	{
+   	  		  incrementCountValue:function()
+   	  		  {
+   	  		  	this.count++;
+
+   	  		  }
+   	  	}
+
+              
+              
+   	  });
+   </script>
+        
+</body>
+</html>
